@@ -16,7 +16,7 @@
 # hardcode pet objects 
 # 
 
-require "pry"
+#require "pry"
 require_relative "pet"
 require_relative "client"
 
@@ -49,18 +49,32 @@ john.pets << tigger
 
 print "Choose to (a)dopt a pet  or (r)eturn a pet or (q)uit: "
 response = gets.chomp.downcase # chomps get rid of enter key 
-puts "Please enter your name"
+puts "Please enter your name: "
 client_name = gets.chomp.downcase
+puts ""
 
 while response != "q"
 
   if response == "a"
-    puts spca.pets
-    # list all available pets
+    # list available pet
+    spca.pets.each {|x, y| puts x}
+ 
     # ask which pet do you want to adopt
-    # set pet.owner = client_name
-    # create Client.new(client_name, pet)
+    puts "Which pet would you like to adopt (select from the list)?"
+    pet_name = gets.chomp
+
+    # remove this pet from the shelter
+    spca.pets.delete(pet_name)
+
+   
+
+    # create client
+    client_name = Client.new(client_name)
+    client_name.pets << pet_name
+
     puts "Thank you for adopting #{@pet}"
+
+    puts client_name
 
   else response == "r"
 
@@ -76,4 +90,4 @@ response = gets.chomp.downcase # chomps get rid of enter key
 end
 
 
-binding.pry
+#binding.pry

@@ -10,7 +10,7 @@ class Pet
     @toys = toys
   end
 
-  def to_s
-    puts "#{@name} is a #{@gender} #{@breed} #{@type} who is #{@age} y.o. who likes #{@toys}"
-  end
+  # def to_s
+  #   puts "#{@name} is a #{@gender} #{@breed} #{@type} who is #{@age} y.o. who likes #{@toys}"
+  # end
 end
