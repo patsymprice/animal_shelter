@@ -46,21 +46,16 @@ john = Client.new("John")
 john.pets << tigger
 
 
-binding.pry
-
 
 print "Choose to (a)dopt a pet  or (r)eturn a pet or (q)uit: "
 response = gets.chomp.downcase # chomps get rid of enter key 
-print "Please enter your name"
-client_name = gets_chomp.downcase
+puts "Please enter your name"
+client_name = gets.chomp.downcase
 
 while response != "q"
 
-
-
-
   if response == "a"
-      spca.pets
+    puts spca.pets
     # list all available pets
     # ask which pet do you want to adopt
     # set pet.owner = client_name
@@ -79,3 +74,6 @@ while response != "q"
 print "Choose to (a)dopt a pet  or (r)eturn a pet or (q)uit: "
 response = gets.chomp.downcase # chomps get rid of enter key 
 end
+
+
+binding.pry
